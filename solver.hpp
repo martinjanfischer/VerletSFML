@@ -178,6 +178,10 @@ private:
         for (auto& obj : m_objects) {
             const sf::Vector2f v    = m_constraint_center - obj.position;
             const float        dist = sqrt(v.x * v.x + v.y * v.y);
+            // The distance between the center of the large constraint circle and the center of the small VerletObject
+            // must not exceed the radius of the large constraint circle reduced by half of the small VerletObject.
+            // That means that the small VerletObject is only allowed to touch with its boundary the boundary of the large constraint circle
+            // which means that the center of the VerletObject must not pass the boundary of the large constraint circle reduced by half of the VerletObject.
             if (dist > (m_constraint_radius - obj.radius)) {
                 const sf::Vector2f n = v / dist;
                 obj.position = m_constraint_center - n * (m_constraint_radius - obj.radius);
