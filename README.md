@@ -1,6 +1,9 @@
 # VerletSFML
 
 This project is a naive example of a simple physics engine using the Verlet integration.
+
+This repository is a fork of https://github.com/johnBuffer/VerletSFML.git
+
 [![Alt-Text](https://i.ytimg.com/vi/lS_qeBy3aQI/maxresdefault.jpg)](https://www.youtube.com/watch?v=lS_qeBy3aQI)
 
 # Setup SFML with Visual Studio and CMake
@@ -15,7 +18,7 @@ This project is a naive example of a simple physics engine using the Verlet inte
 1. Select Visual Studio main menu "Build, Install "SFML"...". According to file C:\your_local_path_to\SFML\CMakePresets.json the binary files will be installed in C:\your_local_path_to\SFML\build\install\. There you will find the three folders "include", "lib" and "share".
 
 # Setup VerletSFML with Visual Studio and CMake
-1. clone github repository https://github.com/martinjanfischer/VerletSFML.git (which is a fork of https://github.com/johnBuffer/VerletSFML.git)
+1. clone github repository https://github.com/martinjanfischer/VerletSFML.git
 1. Start Visual Studio
 1. Click on "Continue without code"
 1. Select Visual Studio main menu "File, Open, CMake..."
