@@ -1,7 +1,7 @@
 # VerletSFML
 
 This project is a naive example of a simple physics engine using the Verlet integration.
-[![Alt-Text](https://i.ytimg.com/vi/lS_qeBy3aQI/maxresdefault.jpg)](https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=lS_qeBy3aQI)
+[![Alt-Text](https://i.ytimg.com/vi/lS_qeBy3aQI/maxresdefault.jpg)](https://www.youtube.com/watch?v=lS_qeBy3aQI)
 
 # Setup SFML with Visual Studio and CMake
 1. clone github repository https://github.com/SFML/SFML.git
