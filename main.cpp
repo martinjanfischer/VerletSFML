@@ -33,16 +33,19 @@ int32_t main(int32_t, char*[])
     Renderer renderer{window};
 
     // Solver configuration
-    solver.setConstraint({static_cast<float>(window_width) * 0.5f, static_cast<float>(window_height) * 0.5f}, 450.0f);
+    const float        zoom_factor = 100.0f;
+    const float        constraint_radius = 4.5f;// meters [m]
+    const sf::Vector2f constraint_position{ static_cast<float>(window_width) * 0.5f / zoom_factor, static_cast<float>(window_height) * 0.5f / zoom_factor };
+    solver.setConstraint(constraint_position, constraint_radius);
     solver.setSubStepsCount(8);
     solver.setSimulationUpdateRate(frame_rate);
 
     // Set simulation attributes
     const float        object_spawn_delay    = 0.025f;
-    const float        object_spawn_speed    = 1200.0f;
-    const sf::Vector2f object_spawn_position = {500.0f, 200.0f};
-    const float        object_min_radius     = 1.0f;
-    const float        object_max_radius     = 20.0f;
+    const float        object_spawn_speed    = 12.0f;// meters per second [m/s]
+    const sf::Vector2f object_spawn_position = {5.0f, 2.0f};// meters [m]
+    const float        object_min_radius     = 0.01f;// meters [m]
+    const float        object_max_radius     = 0.2f;// meters [m]
     const uint32_t     max_objects_count     = 1000;
     const float        max_angle             = 1.0f;
 
@@ -67,7 +70,7 @@ int32_t main(int32_t, char*[])
 
         solver.update();
         window.clear(sf::Color::White);
-        renderer.render(solver);
+        renderer.render(solver, zoom_factor);
 		window.display();
     }
 
